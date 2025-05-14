@@ -57,7 +57,6 @@ class Metronome{
 
     // 播放节拍
     playSound(sound){
-        console.log(sound.frequency)
         this.createTickSound(sound.frequency, sound.duration, sound.volume)
     }
 
