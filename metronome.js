@@ -9,7 +9,7 @@ class Metronome{
         this.beatIndex = config.beatIndex || 1 // 当前拍数
         this.stressFirstBeat = config.stressFirstBeat || true // 第一拍重音
         this.currentBpm = config.bpm || 100 // bpm参数
-        this.subdivisionPattern = config.subdivisionPattern = [1] // 细分
+        this.subdivisionPattern = config.subdivisionPattern || [1] // 细分
         this.subdivisionSound = config.subdivisionSound || { // 细分音
             frequency: 1600, // 频率
             duration: 0.08, // 时长
@@ -78,7 +78,7 @@ class Metronome{
 
         // 细分处理 - 如果设置了细分，并且不是第一拍
         if (this.subdivisionPattern.length > 1 && this.activeSubdivision > 0) {
-            if (this.subdivisionPattern[this.activeSubdivision] == 1) {
+            if (this.subdivisionPattern[this。activeSubdivision] == 1) {
                 this.playSound(this.subdivisionSound);
             }
             this.increaseActiveSubdivision() // 细分索引处理
